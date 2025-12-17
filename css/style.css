@@ -1,15 +1,75 @@
-/* Configurando as fontes */
-.font-handwriting { font-family: 'Patrick Hand', cursive; }
-.font-title { font-family: 'Kalam', cursive; }
-
-/* O EFEITO DE PAPEL PAUTADO */
-.bg-paper {
-    background-color: #fdfbf7; /* Cor de papel creme suave */
-    background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 100% 2rem; /* Espaço entre as linhas */
+/* =========================================
+   VARIAVEIS GLOBAIS
+   ========================================= */
+:root {
+    /* Cores do papel */
+    --paper-bg: #fdfbf7;      /* Um creme bem suave, melhor para leitura que branco puro */
+    --paper-lines: #e5e7eb;   /* Cor das linhas/pontos do caderno */
+    --pencil-gray: #475569;   /* Cor de texto padrão */
 }
-        
-/* Scrollbar personalizada para parecer "rabiscada" */
-.custom-scrollbar::-webkit-scrollbar { width: 8px; }
-.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background-color: #93c5fd; border-radius: 20px; }
+
+/* =========================================
+   ESTILOS GERAIS E FONTES
+   ========================================= */
+body {
+    /* Garante suavização das fontes para ficarem mais bonitas */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Classes de Fonte chamadas no seu HTML */
+.font-handwriting {
+    font-family: 'Patrick Hand', cursive;
+    letter-spacing: 0.02em; /* Um leve espaçamento ajuda na leitura de fontes manuais */
+}
+
+.font-title {
+    font-family: 'Kalam', cursive;
+}
+
+/* =========================================
+   TEXTURAS E FUNDOS
+   ========================================= */
+/* A mágica do "bg-paper" */
+.bg-paper {
+    background-color: var(--paper-bg);
+    
+    /* Cria um efeito de pontilhado (grid de caderno) */
+    background-image: radial-gradient(var(--paper-lines) 1px, transparent 1px);
+    background-size: 24px 24px; /* Tamanho dos quadrados do grid */
+}
+
+/* =========================================
+   SCROLLBAR PERSONALIZADA (custom-scrollbar)
+   ========================================= */
+/* Funciona no Chrome, Edge e Safari */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px; /* Bem fininha */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* Cinza claro parecendo grafite */
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8; /* Escurece ao passar o mouse */
+}
+
+/* =========================================
+   AJUSTES FINAIS DE INTERFACE
+   ========================================= */
+/* Efeito suave nos links */
+a {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Remove o sublinhado padrão feio, se houver */
+a:hover {
+    text-decoration: none;
+}
