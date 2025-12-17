@@ -1,0 +1,15 @@
+/* Configurando as fontes */
+.font-handwriting { font-family: 'Patrick Hand', cursive; }
+.font-title { font-family: 'Kalam', cursive; }
+
+/* O EFEITO DE PAPEL PAUTADO */
+.bg-paper {
+    background-color: #fdfbf7; /* Cor de papel creme suave */
+    background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 100% 2rem; /* Espaço entre as linhas */
+}
+        
+/* Scrollbar personalizada para parecer "rabiscada" */
+.custom-scrollbar::-webkit-scrollbar { width: 8px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background-color: #93c5fd; border-radius: 20px; }
